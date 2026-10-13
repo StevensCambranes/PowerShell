@@ -1,0 +1,11 @@
+# Inicializa el prompt personalizado
+oh-my-posh init pwsh --config "$env:LOCALAPPDATA\Programs\oh-my-posh\themes\amro.omp.json" | Invoke-Expression
+
+# Agrega íconos visuales a los archivos y carpetas
+Import-Module Terminal-Icons
+
+# Muestra el autocompletado en forma de lista vertical
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+# Carga el gestor de versiones de Node.js (fnm)
+fnm env --use-on-cd | Out-String | Invoke-Expression
